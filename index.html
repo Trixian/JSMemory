@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+	Images from background and cover image from Unsplash.com
+	background: https://unsplash.com/photos/YnNczu62rdk
+	cover: https://unsplash.com/photos/xDrxJCdedcI
+-->
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Cardgame</title>
+	<link href="css/game.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+<h1 class="game-title">Memory Game</h1>
+<div id="field"></div>
+
+
+	<label for="field-size" class="field-bar"> <p>Choose your field size: 
+		<select  name="field-size" id="field-size">
+			<option class="#" value="#">&minus;</option>
+			<option class="board4" value="4">4 x 4</option>
+			<option class="board5" value="5">5 x 5</option>
+			<option class="board6" value="6">6 x 6</option>
+	
+		</div>
+		<!--Onthoudt welke grootte van speelveld (field-size) is gekozen -->
+		<div id=boardsize 
+		<?php print boardsize; ?> 
+		</select>
+	</p>
+	</label>
+</div>
+</div>
+
+	<script src="js/memory.js" type="module"></script>
+</body>
+
+</html>
