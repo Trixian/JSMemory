@@ -8,8 +8,17 @@ class Card {
     this.sound = cardObject.sound;
     this.set = cardObject.set;
   }
-}
 
+  checkForMatches() 
+
+}
+// Losse variabelen en koppelingen met html
+const myField = document.getElementById('field'); //Koppel field uit HTML aan const myField
+const mySelect = document.getElementById('field-size');
+let myCardArray = ['duck', 'kitten', 'piglet', 'puppy', 'calf', 'veal', 'lamb', 'rooster', 'horse', 'mouse', 'dog', 'cat', 'goose', 'goat', 'sheep', 'pig', 'cow', 'chick', 'hen'];
+myField.addEventListener('click', onClickCard); //Wanneer myField wordt aangeklikt, registreer dit als 'click' event. 
+mySelect.addEventListener('change', onSelectFieldSize); //Verander size speelveld
+let boardClass; //variabele definieren omdat ik strict gebruik, anders werkt hij niet
 //haal variabelen uit JSON bestand
 fetch('js/cards.json')  //Fetch Json File
   .then(response => response.json())
@@ -20,18 +29,10 @@ fetch('js/cards.json')  //Fetch Json File
     console.log(myCardArray);
   })
 
-
-// Losse variabelen en koppelingen met html
-const myField = document.getElementById('field'); //Koppel field uit HTML aan const myField
-const mySelect = document.getElementById('field-size');
-myField.addEventListener('click', onClickCard); //Wanneer myField wordt aangeklikt, registreer dit als 'click' event. 
-mySelect.addEventListener('change', onSelectFieldSize); //Verander size speelveld
-let myCardArray = ['duck', 'kitten', 'piglet', 'puppy', 'calf', 'veal', 'lamb', 'rooster', 'horse', 'mouse', 'dog', 'cat', 'goose', 'goat', 'sheep', 'pig', 'cow', 'chick', 'hen'];
-
 //Kies maat speelveld
 function onSelectFieldSize(e) {
   let fieldSize = e.target.value; //Fieldsize is waarde van geselecteerde variabele
-  let boardSize = document.getElementById('boardsize'); //Laad boardSize uit HTML
+  boardSize = document.getElementById('boardsize'); //Laad boardSize uit HTML en onthoud (php)
   let myCardSet = myScrambledArray(myCardArray); //myCardSet is geshuffelede myCardArray 
 
   switch (fieldSize) {
@@ -51,7 +52,6 @@ function onSelectFieldSize(e) {
 
   // Hier zorgen dat de boel verdubbeld. 
   console.log('myCardSet is ' + myCardSet.length)
-
   myCardSet = myCardSet.concat(myCardSet); //myCardSet = mysizeCardArray + mySizeCardArray;
   console.log('myCardSet.concat is ' + myCardSet.length)
   myScrambledArray(myCardSet);
@@ -83,38 +83,14 @@ function populateField(myCardSet) {
 
 //Draai kaart om wanneer er op geklikt wordt. 
 function onClickCard(e) { //Wanneer kaart in myField wordt aangeklikt:
-  let clickedCard;
-  let animalName = ''; //lege variabele om later kaarten te kunnen vergelijken.
-
-
-  while (animalName === '') {
     if (e.target.className === 'covered') { //wanneer target class covered heeft:
       e.target.className = 'uncovered'; //verander naam class in uncovered (waardoor als het goed is de afbeelding van het dier verschijnt).
-      animalName += e.target.parentNode.firstChild.getAttribute('naamDier');
-      //console.log(e.target.parentNode.firstChild.getAttribute('naamDier')); //In console toon welke kaart wordt aangeklikt.
-      console.log('Animal name is: ' + animalName);
-  //sla clicked card op in variabele let clickedCard
-    } else if (animalName !== '') {
-      checkForMatch();
-    }
-  }
+      e.target.parentNode.firstChild.getAttribute('naamDier');
+      console.log(e.target.parentNode.firstChild.getAttribute('naamDier')); //In console toon welke kaart wordt aangeklikt.
+
+ 
 }
 
-function checkForMatch(myCardSet) {
-  let message; 
-  let matches = 0;
-
-  if (animalName === animalName) {
-    message =  'you\'ve got a match!';
-    matches += 1;
-  } else if (animalName !== animalName) {
-    message =  'No match, let\'s try again!';
-    } else if (myCardSet.lenght === myCardSet.length) {
-      message = 'Congratulations! you gave won!';
-    }
-}
-
-b
 // 1: De aangeklikte kaart (of naam van het dier) opslaan in een variabele
 //Maar dit mag alleen wanneer de variabale leeg is. 
 //Dus stap 1 is: Controleren of de variabele waarin je de aangeklikte kaart 
@@ -148,4 +124,4 @@ let x;
     }*/
   }
   return myCardSet;
-}
+}}

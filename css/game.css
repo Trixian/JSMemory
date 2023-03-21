@@ -1,6 +1,6 @@
 
 html {
-background-image: url(/img/background.jpg);
+background-image: url(/background/background.jpg);
 margin: auto;
 align-content: center;
 }
@@ -35,6 +35,14 @@ p {
 .game-title {
   color: rgb(0, 0, 0);
   width: 100%;
+  text-align: center;
+  text-shadow: .5em .5em .8em rgb(154, 154, 154);
+
+}
+
+.game-info {
+  color: rgb(0, 0, 0);
+  width: 50%;
   text-align: center;
   text-shadow: .5em .5em .8em rgb(154, 154, 154);
 
