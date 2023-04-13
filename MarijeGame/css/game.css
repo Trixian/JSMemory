@@ -1,0 +1,132 @@
+
+html {
+background-image: url(/MarijeGame/background/background.jpg);
+margin: auto;
+align-content: center;
+}
+
+
+* {
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+#body {
+  margin: auto;
+  padding: 2em;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 1em;
+  background-image: linear-gradient( rgba(147, 147, 147, 0.3), 90%, rgba(0, 0, 0, 0.3));
+  border-top: .1em solid rgb(190, 190, 190);
+  border-bottom: .1em solid rgb(95, 95, 95);
+  margin: auto;
+}
+
+p {
+  font-style: bold;
+  font-size: 1.5em;
+
+}
+
+.game-title {
+  color: rgb(0, 0, 0);
+  width: 100%;
+  text-align: center;
+  text-shadow: .5em .5em .8em rgb(154, 154, 154);
+
+}
+
+.game-info {
+  color: rgb(0, 0, 0);
+  width: 50%;
+  text-align: center;
+  text-shadow: .5em .5em .8em rgb(154, 154, 154);
+
+}
+
+.field-bar {
+  padding: 0;
+  margin: auto;
+}
+
+#field-size {
+  height: 3em;
+  width: 3em;
+  text-align: center;
+  margin: auto;
+  border-color: black;
+}
+
+#field {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#field>div {
+  border-radius: 20%;
+position: relative;
+padding: 5px;
+}
+
+#field img {
+  margin: auto;
+}
+
+.board4 {
+  flex: 25%;
+  max-width: 25%;
+  box-sizing: border-box;
+}
+
+.board5 {
+  flex: 20%;
+  max-width: 20%;
+  box-sizing: border-box;
+}
+
+.board6 {
+  flex: 16.66666%;
+  max-width: 16.66666%;
+  box-sizing: border-box;
+}
+
+img {
+  margin: auto;
+  width: 100%;
+  display: block;
+  padding: .5em;
+}
+
+.covered {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10%);
+}
+
+.uncovered {
+  opacity: 0.0;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10%);
+}
+
+@media screen and (min-width: 768px) {
+  #field {
+    max-width: 768px;
+
+  }
+
+}
+
+
